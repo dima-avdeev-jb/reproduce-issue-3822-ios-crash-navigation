@@ -73,3 +73,7 @@ android {
         jvmToolchain(17)
     }
 }
+
+compose {
+    kotlinCompilerPlugin.set(project.property("compose.kotlinCompilerPlugin") as String)
+}
