@@ -9,12 +9,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -76,12 +80,10 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 content = {
                     Column(
-                        Modifier.weight(1f),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.SpaceEvenly
+                        Modifier.weight(1f)
                     ) {
-                        LazyColumn() {
-                            repeat(5) {
+                        LazyColumn(Modifier.windowInsetsPadding(WindowInsets.systemBars)) {
+                            repeat(1) {
                                 item {
                                     MaterialTheme(
                                         typography = Typography(
@@ -97,15 +99,14 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                             Modifier
                                                 .fillMaxWidth()
                                                 .height(30.dp),
-                                            horizontalArrangement = Arrangement.Center,
                                             verticalAlignment = Alignment.CenterVertically
                                         ) {
-                                            Box(Modifier.height(25.dp).fillMaxWidth()
+                                            Box(Modifier.height(25.dp).width(250.dp)
                                                 .graphicsLayer {}
                                                 .background(Color.Yellow)
                                                 .clickable { onComposeClick() }
                                             ) {
-                                                Text("CLICK ME")
+                                                Text("CLICK ME MULTIPLE TIMES")
                                             }
 
                                             Box(

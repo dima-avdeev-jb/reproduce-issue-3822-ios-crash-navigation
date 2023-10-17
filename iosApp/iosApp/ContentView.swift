@@ -15,7 +15,7 @@ struct ContentView: View {
                 .navigationDestination(for: Int.self) { destination in
                     Text("Press back to reproduce bug")
                 }
-                .ignoresSafeArea()
+                .ignoresSafeArea(.all)
             }
         }
 }
