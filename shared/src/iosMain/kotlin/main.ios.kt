@@ -53,11 +53,8 @@ public object CoffeeSelectorsMobileUIViewController2 {
     }
 }
 
-private val options = listOf("", "", "") + listOf(".", ".")
-
 @Composable
 internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
-//    val options = remember { listOf("", "", "") + listOf("?", "CLICK_ME") }
     MaterialTheme(
         colors = darkColors(
             primary = Color.Black,
@@ -66,7 +63,7 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
             background = Color.Black,
             onBackground = Color.LightGray,
         )
-    ){
+    ) {
         val brush = Brush.horizontalGradient(
             0.0f to MaterialTheme.colors.primary,
             0.05f to MaterialTheme.colors.primaryVariant,
@@ -75,9 +72,7 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
         )
         Box(Modifier) {
             Column(
-                Modifier
-                    .background(brush)
-                    .padding(horizontal = 10.dp),
+                Modifier.background(brush),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 content = {
                     Column(
@@ -86,53 +81,55 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                         verticalArrangement = Arrangement.SpaceEvenly
                     ) {
                         LazyColumn() {
-                            items(options) {
-                                MaterialTheme(
-                                    typography = Typography(
-                                        body1 = TextStyle(
-                                            fontWeight = FontWeight.Normal,
-                                            fontSize = 16.sp,
-                                            letterSpacing = 0.5.sp,
-                                            fontFamily = ledFontFamily3
+                            repeat(5) {
+                                item {
+                                    MaterialTheme(
+                                        typography = Typography(
+                                            body1 = TextStyle(
+                                                fontWeight = FontWeight.Normal,
+                                                fontSize = 16.sp,
+                                                letterSpacing = 0.5.sp,
+                                                fontFamily = ledFontFamily3
+                                            ),
                                         ),
-                                    ),
-                                ) {
-                                    Row(
-                                        Modifier
-                                            .fillMaxWidth()
-                                            .height(30.dp),
-                                        horizontalArrangement = Arrangement.Center,
-                                        verticalAlignment = Alignment.CenterVertically
                                     ) {
-                                        Box(
+                                        Row(
                                             Modifier
-                                                .fillMaxSize(0.03f)
-                                                .fillMaxHeight()
+                                                .fillMaxWidth()
+                                                .height(30.dp),
+                                            horizontalArrangement = Arrangement.Center,
+                                            verticalAlignment = Alignment.CenterVertically
                                         ) {
                                             Box(
-                                                Modifier.fillMaxSize()
-                                                    .graphicsLayer {
-                                                        shape = RoundedCornerShape(6.dp)
-                                                        clip = true
-                                                    }
+                                                Modifier
+                                                    .fillMaxSize(0.03f)
+                                                    .fillMaxHeight()
                                             ) {
                                                 Box(
-                                                    Modifier
-                                                        .fillMaxSize()
-                                                        .background(
-                                                            color = Color.LightGray
-                                                        )
-                                                )
+                                                    Modifier.fillMaxSize()
+                                                        .graphicsLayer {
+                                                            shape = RoundedCornerShape(6.dp)
+                                                            clip = true
+                                                        }
+                                                ) {
+                                                    Box(
+                                                        Modifier
+                                                            .fillMaxSize()
+                                                            .background(
+                                                                color = Color.LightGray
+                                                            )
+                                                    )
+                                                }
+                                                Text("")
                                             }
-                                            Text(it)
-                                        }
-                                        Spacer(Modifier.size(1.dp))
-                                        Box(Modifier.height(25.dp).fillMaxWidth()
-                                            .graphicsLayer {}
-                                            .background(Color.Yellow)
-                                            .clickable { onComposeClick() }
-                                        ) {
-                                            Text("CLICK ME")
+                                            Spacer(Modifier.size(1.dp))
+                                            Box(Modifier.height(25.dp).fillMaxWidth()
+                                                .graphicsLayer {}
+                                                .background(Color.Yellow)
+                                                .clickable { onComposeClick() }
+                                            ) {
+                                                Text("CLICK ME")
+                                            }
                                         }
                                     }
                                 }
