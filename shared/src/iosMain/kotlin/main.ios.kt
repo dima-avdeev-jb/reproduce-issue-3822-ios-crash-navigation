@@ -106,7 +106,7 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                     ) {
                                         Box(
                                             Modifier
-                                                .fillMaxSize(0.2f)
+                                                .fillMaxSize(0.03f)
                                                 .fillMaxHeight()
                                         ) {
                                             Box(
@@ -127,12 +127,12 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                             Text(it)
                                         }
                                         Spacer(Modifier.size(1.dp))
-                                        Box(Modifier.size(25.dp)
+                                        Box(Modifier.height(25.dp).fillMaxWidth()
                                             .graphicsLayer {}
                                             .background(Color.Yellow)
                                             .clickable { onComposeClick() }
                                         ) {
-                                            Text("Click me")
+                                            Text("CLICK ME")
                                         }
                                     }
                                 }
