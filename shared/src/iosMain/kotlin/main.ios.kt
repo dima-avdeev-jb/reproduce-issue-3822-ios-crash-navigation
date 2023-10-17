@@ -100,6 +100,14 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                             horizontalArrangement = Arrangement.Center,
                                             verticalAlignment = Alignment.CenterVertically
                                         ) {
+                                            Box(Modifier.height(25.dp).fillMaxWidth()
+                                                .graphicsLayer {}
+                                                .background(Color.Yellow)
+                                                .clickable { onComposeClick() }
+                                            ) {
+                                                Text("CLICK ME")
+                                            }
+
                                             Box(
                                                 Modifier
                                                     .fillMaxSize(0.03f)
@@ -122,14 +130,7 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                                 }
                                                 Text("")
                                             }
-                                            Spacer(Modifier.size(1.dp))
-                                            Box(Modifier.height(25.dp).fillMaxWidth()
-                                                .graphicsLayer {}
-                                                .background(Color.Yellow)
-                                                .clickable { onComposeClick() }
-                                            ) {
-                                                Text("CLICK ME")
-                                            }
+
                                         }
                                     }
                                 }
