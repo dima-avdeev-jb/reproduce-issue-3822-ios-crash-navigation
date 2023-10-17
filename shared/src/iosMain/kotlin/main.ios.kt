@@ -53,7 +53,7 @@ public object CoffeeSelectorsMobileUIViewController2 {
     }
 }
 
-private val options = listOf("", "", "") + listOf("?", "CLICK_ME")
+private val options = listOf("", "", "") + listOf(".", ".")
 
 @Composable
 internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
@@ -131,7 +131,9 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                             .graphicsLayer {}
                                             .background(Color.Yellow)
                                             .clickable { onComposeClick() }
-                                        )
+                                        ) {
+                                            Text("Click me")
+                                        }
                                     }
                                 }
                             }
