@@ -106,7 +106,7 @@ internal fun CoffeeSelectorsMobile(onComposeClick: () -> Unit) {
                                     ) {
                                         Box(
                                             Modifier
-                                                .fillMaxSize(0.8f)
+                                                .fillMaxSize(0.2f)
                                                 .fillMaxHeight()
                                         ) {
                                             Box(
