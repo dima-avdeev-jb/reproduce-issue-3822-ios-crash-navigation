@@ -79,8 +79,6 @@ fun App(onComposeClick: () -> Unit) {
                     }
                 }
             }
-            //Overlay
-            Box(Modifier.fillMaxSize().background(Color.Black.copy(0.1f)))
         }
     }
 }
