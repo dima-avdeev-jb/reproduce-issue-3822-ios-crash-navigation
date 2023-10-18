@@ -143,23 +143,6 @@ fun App(onComposeClick: () -> Unit) {
 
                             }
                         }
-
-                    }
-                    Column(
-                        Modifier.weight(1f),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        LazyVerticalGrid(
-                            columns = GridCells.Fixed(3),
-                            contentPadding = PaddingValues(horizontal = 15.dp),
-                        ) {
-                            repeat(100) {
-                                item {
-                                    Spacer(Modifier.height(4.dp).background(Color.DarkGray))
-                                }
-                            }
-                        }
                     }
                 }
             )
