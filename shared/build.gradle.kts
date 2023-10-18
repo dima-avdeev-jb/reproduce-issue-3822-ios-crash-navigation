@@ -43,7 +43,3 @@ kotlin {
         }
     }
 }
-
-compose {
-    kotlinCompilerPlugin.set(project.property("compose.kotlinCompilerPlugin") as String)
-}
