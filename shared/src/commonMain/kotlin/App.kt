@@ -60,68 +60,63 @@ fun App(onComposeClick: () -> Unit) {
             Column(
                 Modifier.background(brush),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                content = {
-                    Column(
-                        Modifier.weight(1f)
-                    ) {
-                        LazyColumn(Modifier.windowInsetsPadding(WindowInsets.systemBars)) {
-                            repeat(1) {
-                                item {
-                                    MaterialTheme(
-                                        typography = Typography(
-                                            body1 = TextStyle(
-                                                fontWeight = FontWeight.Normal,
-                                                fontSize = 16.sp,
-                                                letterSpacing = 0.5.sp,
-                                                fontFamily = ledFontFamily3
-                                            ),
-                                        ),
+            ){
+                Column(Modifier.windowInsetsPadding(WindowInsets.systemBars)) {
+                    LazyColumn() {
+                        item {
+                            MaterialTheme(
+                                typography = Typography(
+                                    body1 = TextStyle(
+                                        fontWeight = FontWeight.Normal,
+                                        fontSize = 16.sp,
+                                        letterSpacing = 0.5.sp,
+                                        fontFamily = ledFontFamily3
+                                    ),
+                                ),
+                            ) {
+                                Row(
+                                    Modifier
+                                        .fillMaxWidth()
+                                        .height(30.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Box(Modifier.height(25.dp).width(250.dp)
+                                        .graphicsLayer {}
+                                        .background(Color.Yellow)
+                                        .clickable { onComposeClick() }
                                     ) {
-                                        Row(
-                                            Modifier
-                                                .fillMaxWidth()
-                                                .height(30.dp),
-                                            verticalAlignment = Alignment.CenterVertically
-                                        ) {
-                                            Box(Modifier.height(25.dp).width(250.dp)
-                                                .graphicsLayer {}
-                                                .background(Color.Yellow)
-                                                .clickable { onComposeClick() }
-                                            ) {
-                                                Text("CLICK ME MULTIPLE TIMES")
-                                            }
+                                        Text("CLICK ME MULTIPLE TIMES")
+                                    }
 
+                                    Box(
+                                        Modifier
+                                            .fillMaxSize(0.03f)
+                                            .fillMaxHeight()
+                                    ) {
+                                        Box(
+                                            Modifier.fillMaxSize()
+                                                .graphicsLayer {
+                                                    shape = RoundedCornerShape(6.dp)
+                                                    clip = true
+                                                }
+                                        ) {
                                             Box(
                                                 Modifier
-                                                    .fillMaxSize(0.03f)
-                                                    .fillMaxHeight()
-                                            ) {
-                                                Box(
-                                                    Modifier.fillMaxSize()
-                                                        .graphicsLayer {
-                                                            shape = RoundedCornerShape(6.dp)
-                                                            clip = true
-                                                        }
-                                                ) {
-                                                    Box(
-                                                        Modifier
-                                                            .fillMaxSize()
-                                                            .background(
-                                                                color = Color.LightGray
-                                                            )
+                                                    .fillMaxSize()
+                                                    .background(
+                                                        color = Color.LightGray
                                                     )
-                                                }
-                                                Text("")
-                                            }
-
+                                            )
                                         }
+                                        Text("")
                                     }
+
                                 }
                             }
                         }
                     }
                 }
-            )
+            }
             //Overlay
             Box(
                 Modifier
