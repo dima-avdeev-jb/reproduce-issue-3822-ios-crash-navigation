@@ -24,7 +24,7 @@ public struct CoffeeSelectorsMobileRepresentable2: UIViewControllerRepresentable
     let onComposeClick: () -> Void
 
     public func makeUIViewController(context: Context) -> UIViewController {
-        return CoffeeSelectorsMobileUIViewController2().make(onComposeClick: onComposeClick)
+        Main_iosKt.MainViewController(onComposeClick: onComposeClick)
     }
 
     public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {

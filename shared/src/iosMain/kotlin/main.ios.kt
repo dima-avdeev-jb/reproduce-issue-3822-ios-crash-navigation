@@ -47,14 +47,9 @@ import kotlin.io.encoding.ExperimentalEncodingApi
 
 actual fun getPlatformName(): String = "iOS"
 
-fun MainViewController() = ComposeUIViewController { App() }
-
-public object CoffeeSelectorsMobileUIViewController2 {
-    public fun make(onComposeClick: () -> Unit): UIViewController {
-        return ComposeUIViewController {
-            CoffeeSelectorsMobile(onComposeClick)
-        }
-    }
+@Suppress("unused")
+fun MainViewController(onComposeClick: () -> Unit) = ComposeUIViewController {
+    CoffeeSelectorsMobile(onComposeClick)
 }
 
 @Composable
