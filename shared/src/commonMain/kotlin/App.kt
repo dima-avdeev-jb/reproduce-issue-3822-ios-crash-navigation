@@ -70,52 +70,17 @@ fun App(onComposeClick: () -> Unit) {
                         ),
                     ),
                 ) {
-                    Row(
-                        Modifier
-                            .fillMaxWidth()
-                            .height(30.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                    Box(Modifier.height(25.dp).width(250.dp)
+                        .graphicsLayer {}
+                        .background(Color.Yellow)
+                        .clickable { onComposeClick() }
                     ) {
-                        Box(Modifier.height(25.dp).width(250.dp)
-                            .graphicsLayer {}
-                            .background(Color.Yellow)
-                            .clickable { onComposeClick() }
-                        ) {
-                            Text("CLICK ME MULTIPLE TIMES")
-                        }
-
-                        Box(
-                            Modifier
-                                .fillMaxSize(0.03f)
-                                .fillMaxHeight()
-                        ) {
-                            Box(
-                                Modifier.fillMaxSize()
-                                    .graphicsLayer {
-                                        shape = RoundedCornerShape(6.dp)
-                                        clip = true
-                                    }
-                            ) {
-                                Box(
-                                    Modifier
-                                        .fillMaxSize()
-                                        .background(
-                                            color = Color.LightGray
-                                        )
-                                )
-                            }
-                            Text("")
-                        }
-
+                        Text("CLICK ME MULTIPLE TIMES")
                     }
                 }
             }
             //Overlay
-            Box(
-                Modifier
-                    .fillMaxSize()
-                    .background(Color.Black.copy(0.1f))
-            )
+            Box(Modifier.fillMaxSize().background(Color.Black.copy(0.1f)))
         }
     }
 }
