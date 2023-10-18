@@ -119,30 +119,6 @@ fun App(onComposeClick: () -> Unit) {
                                 }
                             }
                         }
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center
-                        ) {
-                            Box(
-                                Modifier.fillMaxWidth()
-                                    .height(15.dp)
-                                    .graphicsLayer {
-                                        shape = RoundedCornerShape(4.dp)
-                                        clip = true
-                                    }
-                                    .background(Color.LightGray)
-                                    .graphicsLayer {
-                                        shape = RoundedCornerShape(4.dp)
-                                        clip = true
-                                    }
-                            ) {
-                                Box(Modifier.fillMaxSize().background(Color.Transparent))
-                            }
-                            Spacer(Modifier.size(6.dp))
-                            Canvas(modifier = Modifier.fillMaxWidth().height(15.dp)) {
-
-                            }
-                        }
                     }
                 }
             )
