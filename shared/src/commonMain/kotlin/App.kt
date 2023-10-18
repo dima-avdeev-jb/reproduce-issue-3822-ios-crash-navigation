@@ -25,34 +25,13 @@ import kotlin.io.encoding.ExperimentalEncodingApi
 
 @Composable
 fun App(onComposeClick: () -> Unit) {
-    MaterialTheme(
-        colors = darkColors(
-            primary = Color.Black,
-            primaryVariant = Color.Black.copy(alpha = 0.7f),
-            surface = Color.Black.copy(alpha = 0.9f),
-            background = Color.Black,
-            onBackground = Color.LightGray,
-        )
-    ) {
-        Box(Modifier) {
-            Column(
-                Modifier.windowInsetsPadding(WindowInsets.systemBars)
+    MaterialTheme {
+        Box(Modifier.windowInsetsPadding(WindowInsets.systemBars)) {
+            Box(Modifier.width(250.dp)
+                .background(Color.Yellow)
+                .clickable { onComposeClick() }
             ) {
-                MaterialTheme(
-                    typography = Typography(
-                        body1 = TextStyle(
-                            fontFamily = ledFontFamily3
-                        ),
-                    ),
-                ) {
-                    Box(Modifier.height(25.dp).width(250.dp)
-                        .graphicsLayer {}
-                        .background(Color.Yellow)
-                        .clickable { onComposeClick() }
-                    ) {
-                        Text("CLICK ME MULTIPLE TIMES")
-                    }
-                }
+                Text("CLICK ME MULTIPLE TIMES", fontFamily = ledFontFamily3)
             }
         }
     }
