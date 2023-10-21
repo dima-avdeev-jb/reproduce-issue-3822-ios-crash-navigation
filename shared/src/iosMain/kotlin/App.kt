@@ -7,11 +7,13 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.platform.Font
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
 import kotlin.io.encoding.Base64
 import kotlin.io.encoding.ExperimentalEncodingApi
 
@@ -25,12 +27,20 @@ fun App(onComposeClick: () -> Unit) {
     ) {
         Text("CLICK ME MULTIPLE TIMES", fontFamily = ledFontFamily3)
     }
+    LaunchedEffect(Unit) {
+        while (true) {
+            kotlin.native.internal.GC.collect()
+            delay(10)
+        }
+    }
 }
 
 @OptIn(ExperimentalEncodingApi::class)
-val ledFontFamily3 = FontFamily(
-    Font(
-        identity = "led_panel_panels_station_on",
-        data = Base64.decode(fontBase64),
+val ledFontFamily3 =
+    FontFamily(
+        Font(
+            identity = "led_panel_panels_station_on",
+            data = Base64.decode(fontBase64),
+        )
     )
-)
+
