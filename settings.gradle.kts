@@ -5,11 +5,11 @@ include(":desktopApp")
 
 pluginManagement {
     repositories {
+        mavenLocal()
         gradlePluginPortal()
         mavenCentral()
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-        mavenLocal()
     }
 
     plugins {
@@ -28,9 +28,9 @@ plugins {
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         mavenCentral()
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-        mavenLocal()
     }
 }
